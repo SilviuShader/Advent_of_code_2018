@@ -13,7 +13,7 @@ Module Program
 
     End Structure
 
-    Function Atoi(line As String, ByRef index As Integer) As Integer
+    Function Atoi(ByRef line As String, ByRef index As Integer) As Integer
 
         Dim id As Integer
         id = 0
