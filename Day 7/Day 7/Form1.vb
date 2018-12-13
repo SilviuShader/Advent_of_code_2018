@@ -122,6 +122,7 @@
         For index = 0 To 25
             If canBeStart(index) = 1 Then
                 startNode = index
+                Exit For
             End If
         Next
 
@@ -160,9 +161,12 @@
         Dim cond As Boolean = True
         Dim startNode As Integer = 0
 
+        Dim result As String = ""
+
         For index = 0 To 25
             If canBeStart(index) = 1 Then
                 startNode = index
+                Exit For
             End If
         Next
 
@@ -185,6 +189,12 @@
                 If (workers(index).timeToGo = 0) Then
 
                     If Not (workers(index).nodeWorking = -1) Then
+
+                        If Not (addedToSolution(workers(index).nodeWorking) = 1) Then
+
+                            result = result + IntToLetter(workers(index).nodeWorking)
+
+                        End If
 
                         addedToSolution(workers(index).nodeWorking) = 1
 
